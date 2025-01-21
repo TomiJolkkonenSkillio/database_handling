@@ -1,14 +1,14 @@
 import psycopg2
 from config import config
 
-def query_person():
+def crud_update_delete():
     con = None
     try:
         # connect tothe database
         con = psycopg2.connect(**config())
         cursor = con.cursor()
 
-        # the actual query, selecting all from table 'person'
+        # the actual query, using update and delete in various ways
         SQL = 'SELECT * FROM person;'
         cursor.execute(SQL)
 
@@ -27,7 +27,7 @@ def query_person():
             con.close()
 
 def main():
-    query_person() 
+    crud_update_delete()
 
 if __name__ == "__main__":
     main()
