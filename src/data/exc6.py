@@ -41,7 +41,7 @@ def retrieve_image_from_db(cursor, image_id, output_file):
     else:
         print("Image not found in the database.")
 
-def transaction():
+def image_blob():
     con = None
     try:
         # connect to database
@@ -75,7 +75,7 @@ def transaction():
             con.close()
 
 def main():
-    transaction()
+    image_blob()
 
 if __name__ == "__main__":
     main()
